@@ -38,4 +38,5 @@ class Handler(object):
             .reset_index()
         )
         forecast_data = grouped[grouped['calc_type'] == 'forecast']
+        print("Total Qliq amd Qoil for forecast:")
         print(forecast_data)
