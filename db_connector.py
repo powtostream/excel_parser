@@ -23,9 +23,7 @@ class DbConnector(object):
                 connection.close()
                 print("Connection closed")
 
-    def insert_values(self, values):
-        sql_script = "INSERT INTO qliq_qoil (company_name, 'date', " \
-                     "calc_type, qliq, qoil) VALUES (?,?,?,?,?) "
+    def insert_values(self, values, sql_script):
         try:
             connection = sqlite3.connect(self.db_name)
             cursor = connection.cursor()

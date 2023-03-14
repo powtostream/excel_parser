@@ -29,7 +29,9 @@ class Handler(object):
             values_tuples.append(tuple(row))
 
         db_connector = DbConnector(db_name)
-        db_connector.insert_values(values_tuples)
+        with open('sql_scripts/insert_into_qliq_qoil.sql', 'r') as file:
+            sql_script = file.read()
+        db_connector.insert_values(values_tuples, sql_script)
 
         grouped = (
             data_frame
